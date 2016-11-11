@@ -48,7 +48,7 @@ io.on('connection',function(socket){
     console.log(obj.username+'加入了聊天室');
   });
 
-  //监听用户退出 监听用户退出
+  //监听用户退出 
   socket.on('disconnect', function(){
     //将退出的用户从在线列表中删除
     if(onlineUsers.hasOwnProperty(socket.name)) {
