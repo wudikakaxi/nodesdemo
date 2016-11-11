@@ -9,7 +9,7 @@
 	ec = encodeURIComponent;
 	
 
-	
+
 	w.CHAT = {
 		msgObj:d.getElementById("message"),
 		screenheight:w.innerHeight ? w.innerHeight : dx.clientHeight,
