@@ -8,6 +8,7 @@
 	dx = dc ? dd: db,
 	ec = encodeURIComponent;
 	
+
 	
 	w.CHAT = {
 		msgObj:d.getElementById("message"),
