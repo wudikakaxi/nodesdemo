@@ -7,6 +7,7 @@
 	dc = d.compatMode == 'CSS1Compat',
 	dx = dc ? dd: db,
 	ec = encodeURIComponent;
+
 	
 	
 	w.CHAT = {
