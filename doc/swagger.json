@@ -1,0 +1,665 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "mars",
+    "version": "0.0.1",
+    "description": ""
+  },
+  "paths": {
+    "/api/customer/customeraddressadd": {
+      "post": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "地址添加 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "地址添加 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/customeraddressadd"
+            }
+          }
+        ]
+      }
+    },
+    "/api/customer/customeraddresslist": {
+      "get": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "用户地址列表 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "customerid",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "customerid(5775139) "
+          },
+          {
+            "name": "pageindex",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "pageindex||1 "
+          },
+          {
+            "name": "pagesize",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "pagesize||100 "
+          }
+        ]
+      }
+    },
+    "/customer/getcustomerdishcouponlist": {
+      "get": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "用户菜品券列表 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "typeid",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "typeid(1未使用,2已使用,3已过期) "
+          },
+          {
+            "name": "customerid",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "customerid "
+          }
+        ]
+      }
+    },
+    "/api/customer/getprogrammelist": {
+      "get": {
+        "tags": [
+          "customer"
+        ],
+        "summary": "节目列表及节目下菜品列表 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "programmeid",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "programmeid(节目id，可不传) "
+          },
+          {
+            "name": "customerid",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "customerid "
+          }
+        ]
+      }
+    },
+    "/api/goodies/detail": {
+      "get": {
+        "tags": [
+          "goodies"
+        ],
+        "summary": "美食详情 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "dishid",
+            "in": "path",
+            "required": true,
+            "type": "number",
+            "description": "当前美食id "
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "number",
+              "items": {
+                "$ref": "#/definitions/detail"
+              }
+            }
+          }
+        }
+      }
+    },
+    "api/goodies/watchstar": {
+      "post": {
+        "tags": [
+          "goodies"
+        ],
+        "summary": "关注或取关当前网红 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "关注或取关当前网红 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/watchstar"
+            }
+          }
+        ]
+      }
+    },
+    "/mars/order/collectorder": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "快递订单 确认收货 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "快递订单 确认收货 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/order_collectorder"
+            }
+          }
+        ]
+      }
+    },
+    "/mars/order/getlistorder": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "订单列表 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "订单列表 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/order_collectorder"
+            }
+          }
+        ]
+      }
+    },
+    "/mars/order/getorder": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "获取订单详情 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "获取订单详情 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/order_getorder"
+            }
+          }
+        ]
+      }
+    },
+    "/mars/order/refundorder": {
+      "post": {
+        "tags": [
+          "order"
+        ],
+        "summary": "订单 退款操作 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "订单 退款操作 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/order_refundorder"
+            }
+          }
+        ]
+      }
+    },
+    "/api/payment/notify": {
+      "post": {
+        "tags": [
+          "payment"
+        ],
+        "summary": "在线支付异步回调通知 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "在线支付异步回调通知 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/notify"
+            }
+          }
+        ]
+      }
+    },
+    "/api/payment/pay": {
+      "post": {
+        "tags": [
+          "payment"
+        ],
+        "summary": "支付入口,传入订单号,订单类型,根据订单号获取订单金额,返回paymenturl ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "支付入口,传入订单号,订单类型,根据订单号获取订单金额,返回paymenturl ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/pay"
+            }
+          }
+        ]
+      }
+    },
+    "/api/supplier/currentcitysupplierlist": {
+      "post": {
+        "tags": [
+          "supplier"
+        ],
+        "summary": "当前城市当前菜品的门店列表 ",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "当前城市当前菜品的门店列表 ",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/currentcitysupplierlist"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "customeraddressadd": {
+      "properties": {
+        "telephone": {
+          "type": "string",
+          "description": "用户电话 "
+        },
+        "isdefault": {
+          "type": "number",
+          "description": "是否是默认 "
+        },
+        "recipient": {
+          "type": "string",
+          "description": "联系人 "
+        },
+        "addressbuilding": {
+          "type": "string",
+          "description": "街道楼宇名 "
+        },
+        "addressdetail": {
+          "type": "string",
+          "description": "详细地址 "
+        },
+        "baidulat": {
+          "type": "string",
+          "description": "百度纬度 "
+        },
+        "baidulng": {
+          "type": "string",
+          "description": "百度经度 "
+        }
+      },
+      "required": [
+        "telephone",
+        "isdefault",
+        "recipient",
+        "addressbuilding",
+        "addressdetail",
+        "baidulat",
+        "baidulng"
+      ]
+    },
+    "customeraddresslist": {
+      "properties": {
+        "customerid": {
+          "type": "number",
+          "description": "customerid(5775139) "
+        },
+        "pageindex": {
+          "type": "number",
+          "description": "pageindex||1 "
+        },
+        "pagesize": {
+          "type": "number",
+          "description": "pagesize||100 "
+        }
+      },
+      "required": [
+        "customerid",
+        "pageindex",
+        "pagesize"
+      ]
+    },
+    "getcustomerdishcouponlist": {
+      "properties": {
+        "typeid": {
+          "type": "number",
+          "description": "typeid(1未使用,2已使用,3已过期) "
+        },
+        "customerid": {
+          "type": "number",
+          "description": "customerid "
+        }
+      },
+      "required": [
+        "typeid",
+        "customerid"
+      ]
+    },
+    "getprogrammelist": {
+      "properties": {
+        "programmeid": {
+          "type": "number",
+          "description": "programmeid(节目id，可不传) "
+        },
+        "customerid": {
+          "type": "number",
+          "description": "customerid "
+        }
+      },
+      "required": [
+        "programmeid",
+        "customerid"
+      ]
+    },
+    "detail": {
+      "properties": {
+        "dishid": {
+          "type": "number",
+          "description": "当前美食id "
+        },
+        "periodsnumber": {
+          "type": "number",
+          "description": "节目期数 "
+        },
+        "starid": {
+          "type": "number",
+          "description": "网红id "
+        },
+        "starName": {
+          "type": "string",
+          "description": "网红明星姓名 "
+        },
+        "headUrl": {
+          "type": "string",
+          "description": "头像url "
+        },
+        "introduction": {
+          "type": "string",
+          "description": "明星简介 "
+        },
+        "flowCount": {
+          "type": "number",
+          "description": "关注数 "
+        },
+        "foodbrandname": {
+          "type": "string",
+          "description": "代言美食品牌 "
+        },
+        "platformName": {
+          "type": "string",
+          "description": "推荐平台 "
+        },
+        "dishName": {
+          "type": "string",
+          "description": "菜品名称 "
+        },
+        "dishdescribe": {
+          "type": "string",
+          "description": "菜品描述 "
+        },
+        "needMaterial": {
+          "type": "string",
+          "description": "所需食材 "
+        },
+        "dishPrice": {
+          "type": "string",
+          "description": "菜品价格 "
+        },
+        "salecount": {
+          "type": "string",
+          "description": "菜品售卖数量 "
+        },
+        "isstarwatch": {
+          "type": "number",
+          "description": "是否关注当前明星 "
+        }
+      },
+      "required": [
+        "dishid",
+        "periodsnumber",
+        "starid",
+        "starName",
+        "headUrl",
+        "introduction",
+        "flowCount",
+        "foodbrandname",
+        "platformName",
+        "dishName",
+        "dishdescribe",
+        "needMaterial",
+        "dishPrice",
+        "salecount",
+        "isstarwatch"
+      ]
+    },
+    "watchstar": {
+      "properties": {
+        "starid": {
+          "type": "number",
+          "description": "当前网红的id "
+        }
+      },
+      "required": [
+        "starid"
+      ]
+    },
+    "order_collectorder": {
+      "properties": {
+        "orderid": {
+          "type": "int",
+          "description": "订单id "
+        },
+        "status": {
+          "type": "int",
+          "description": "订单状态 1:待发货 2:待收货 3:已完成 4:已退单 "
+        }
+      },
+      "required": [
+        "orderid",
+        "status"
+      ]
+    },
+    "order_getorder": {
+      "properties": {
+        "orderid": {
+          "type": "int",
+          "description": "订单id "
+        }
+      },
+      "required": [
+        "orderid"
+      ]
+    },
+    "order_refundorder": {
+      "properties": {
+        "orderid": {
+          "type": "int",
+          "description": "订单id "
+        },
+        "reason": {
+          "type": "int",
+          "description": "退款原因 "
+        }
+      },
+      "required": [
+        "orderid",
+        "reason"
+      ]
+    },
+    "notify": {
+      "properties": {
+        "orderType": {
+          "type": "number",
+          "description": "orderType "
+        },
+        "orderNumber": {
+          "type": "string",
+          "description": "orderNumber "
+        },
+        "body": {
+          "type": "string",
+          "description": "body "
+        },
+        "sign": {
+          "type": "string",
+          "description": "sign "
+        }
+      },
+      "required": [
+        "orderType",
+        "orderNumber",
+        "body",
+        "sign"
+      ]
+    },
+    "pay": {
+      "properties": {
+        "ordernumber": {
+          "type": "string",
+          "description": "订单号 "
+        },
+        "paymentmethodid": {
+          "type": "number",
+          "description": "支付方式id(可为空,不传默认为微信支付) "
+        },
+        "ordertype": {
+          "type": "number",
+          "description": "订单类型(0，外卖，2，堂食) "
+        }
+      },
+      "required": [
+        "ordernumber",
+        "paymentmethodid",
+        "ordertype"
+      ]
+    },
+    "currentcitysupplierlist": {
+      "properties": {
+        "typeid": {
+          "type": "number",
+          "description": "typeid "
+        },
+        "dishid": {
+          "type": "number",
+          "description": "dishid "
+        },
+        "cityid": {
+          "type": "string",
+          "description": "cityid "
+        }
+      },
+      "required": [
+        "typeid",
+        "dishid",
+        "cityid"
+      ]
+    }
+  }
+}

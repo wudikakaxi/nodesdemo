@@ -3,8 +3,27 @@ var router = express.Router();
 
 var customerservice=require('../services/usersservice');
 var sd = require('silly-datetime');
-/* GET users listing. */
-// GET users?userid=num
+
+/**
+ * @api {get} /users?userid=1 /
+ * @apiName /
+ * @apiGroup users
+ * @apiDescription 获取用户信息
+ *
+ * @apiParam {int} userid  用户id
+
+ *
+ *
+ * @apiVersion 0.0.2
+ * @apiSampleRequest http://localhost:3000/users?userid=1
+
+ * @apiSuccessExample {json} Success-Response:
+ {
+   "code": 0,
+   "msg": "获取成功",
+   "data": {}
+ }
+ */
 router.get('/', function(req, res, next) {
     //res.send('respond with a resource');
     var userid=req.query.userid;
@@ -22,7 +41,28 @@ router.get('/', function(req, res, next) {
         })
     })
 });
-//GET users?username=username&password=password&sex=sex&
+/**
+ * @api {get} /users/add add
+ * @apiName add
+ * @apiGroup users
+ * @apiDescription 添加用户信息
+ *
+ * @apiParam {int} username  用户姓名
+* @apiParam {int} password  用户密码
+* @apiParam {int} sex  用户性别
+
+ *
+ *
+ * @apiVersion 0.0.2
+ * @apiSampleRequest http://localhost:3000/users/add/
+
+ * @apiSuccessExample {json} Success-Response:
+ {
+   "code": 0,
+   "msg": "添加成功",
+   "data": {}
+ }
+ */
 router.get('/add',function(req,res,next){
     var username=req.query.username;
     var password=req.query.password;
@@ -42,7 +82,28 @@ router.get('/add',function(req,res,next){
         })
     })
 });
+/**
+ * @api {get} /users/edit edit
+ * @apiName edit
+ * @apiGroup users
+ * @apiDescription 修改用户信息
+ *
+ * @apiParam {int} username  用户姓名
+ * @apiParam {int} password  用户密码
+ * @apiParam {int} sex  用户性别
+ * @apiParam {int} id  用户id
+ *
+ *
+ * @apiVersion 0.0.2
+ * @apiSampleRequest http://localhost:3000/users/edit/
 
+ * @apiSuccessExample {json} Success-Response:
+ {
+   "code": 0,
+   "msg": "添加成功",
+   "data": {}
+ }
+ */
 router.get('/edit',function(req,res,next){
     var username=req.query.username;
     var password=req.query.password;
@@ -137,16 +198,16 @@ router.post('/edit',function(req,res,next){
     })
 });
 
-router.post('/del',function(req,res,next){
-    var id=req.body.id;
-    customerservice.delUserById({id:id}).then(result=>{
-            res.json({
-            code:0,
-            msg:'ok',
-            data:result
+router.post('/del', function (req, res, next) {
+    var id = req.body.id;
+    customerservice.delUserById({id: id}).then(result=> {
+        res.json({
+            code: 0,
+            msg: 'ok',
+            data: result
         })
-    }).catch(err=>{
-            res.json({
+    }).catch(err=> {
+        res.json({
             code: 1,
             msg: 'err',
             data: JSON.stringify(err)
@@ -154,3 +215,20 @@ router.post('/del',function(req,res,next){
     })
 });
 module.exports = router;
+
+router.post('/abc', function (req, res, next) {
+
+    'abc'.then(result=> {
+        res.json({
+            code: 0,
+            msg: 'ok',
+            data: result
+        })
+    }).catch(err=> {
+        res.json({
+            code: 1,
+            msg: 'err',
+            data: JSON.stringify(err)
+        })
+    })
+});
