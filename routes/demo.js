@@ -101,5 +101,10 @@ router.get('/user/pic',function(req,res,next){
   res.download('./public/images/1.jpg')
 });
 
+router.get('/login', function(req, res, next) {
+ 
+    res.render("login");
+    return ;
 
+});
 module.exports = router;

@@ -5,6 +5,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var formidable = require('express-formidable');
+var session = require('express-session');
+var redisStore = require('connect-redis')(session);
 var config=require('./config/config');
 var jwtmiddleware = require('./middlewares/jwtmiddleware');
 
@@ -37,8 +39,21 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', demorouter);
+app.use(session({
+    store: new redisStore(config.redis),
+    secret: 'demouser',
+    resave: false,
+    saveUninitialized: true
+}));
+app.use('/', demorouter,function(req,res){
+    if (req.session.token) {
+        res.render('index', {
+            token: req.session.token
+        });
+    }
+    else
+        res.redirect('/login');
+});
 app.use('/users', usersrouter);
 app.use('/file',filerouter);
 app.use('/jwt/auth',[jwt,jwtrouter]);

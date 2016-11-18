@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var authService=require('../services/authservice');
 var customerservice=require('../services/usersservice');
 var sd = require('silly-datetime');
 
@@ -214,22 +214,48 @@ router.post('/del', function (req, res, next) {
         })
     })
 });
+
+router.post('/login', function(req, res, next) {
+
+    var username=req.body.username;
+    var password=req.body.password;
+    if(username=="wudi")
+    {
+        var user={username:username,password:password};
+        req.session.demouser=username;//JSON.stringify(user);
+        var token = authService.signToken(user);
+        req.session.token = token;
+        res.set("Authorization", token.token);
+        res.redirect(`/`);
+        return ;
+    }
+    res.json({
+        state:1,
+        msg:"fasle"
+    });
+    return ;
+});
+
+router.get('/getsession', function(req, res, next) {
+
+    if (req.session.demouser) {
+        //req.session.destroy(); //删除session
+        res.json({
+            state:0,
+            msg:req.session.demouser
+        });
+        return;
+    }
+    else
+    {
+        res.json({
+            state:1,
+            msg:"ok"
+        });
+        return;
+    }
+});
+
 module.exports = router;
 
-router.post('/abc', function (req, res, next) {
-
-    'abc'.then(result=> {
-        res.json({
-            code: 0,
-            msg: 'ok',
-            data: result
-        })
-    }).catch(err=> {
-        res.json({
-            code: 1,
-            msg: 'err',
-            data: JSON.stringify(err)
-        })
-    })
-});
 
