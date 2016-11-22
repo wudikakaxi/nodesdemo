@@ -45,14 +45,18 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
-app.use('/', demorouter,function(req,res){
-    if (req.session.token) {
+app.use('/', demorouter,function(req,res,next){
+    //console.log(123);
+    if (req.session) {
         res.render('index', {
             token: req.session.token
         });
     }
     else
-        res.redirect('/login');
+    {
+        next();
+    }
+        //res.redirect('/login');
 });
 app.use('/users', usersrouter);
 app.use('/file',filerouter);

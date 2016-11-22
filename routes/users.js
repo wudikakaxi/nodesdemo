@@ -215,7 +215,7 @@ router.post('/del', function (req, res, next) {
     })
 });
 
-router.post('/login', function(req, res, next) {
+router.post('/loginsesion', function(req, res, next) {
 
     var username=req.body.username;
     var password=req.body.password;
@@ -243,6 +243,46 @@ router.get('/getsession', function(req, res, next) {
         res.json({
             state:0,
             msg:req.session.demouser
+        });
+        return;
+    }
+    else
+    {
+        res.json({
+            state:1,
+            msg:"ok"
+        });
+        return;
+    }
+});
+
+router.post('/logincookie', function(req, res, next) {
+
+    var username=req.body.username;
+    var password=req.body.password;
+    if(username=="wudi")
+    {
+        var user={username:username,password:password};
+        res.cookie('username', JSON.stringify(user));
+        res.redirect(`/`);
+        return ;
+    }
+    res.json({
+        state:1,
+        msg:"fasle"
+    });
+    return ;
+
+});
+
+
+router.get('/getcookie', function(req, res, next) {
+
+    if (req.cookies.username) {
+        //req.session.destroy(); //删除session
+        res.json({
+            state:0,
+            msg:req.cookies.username
         });
         return;
     }
