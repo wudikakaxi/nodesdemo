@@ -123,7 +123,26 @@ router.get('/edit',function(req,res,next){
         })
     })
 });
+/**
+ * @api {get} /users/del del
+ * @apiName del
+ * @apiGroup users
+ * @apiDescription 删除用户信息
+ *
 
+ * @apiParam {int} id  用户id
+ *
+ *
+ * @apiVersion 0.0.2
+ * @apiSampleRequest http://localhost:3000/users/del/
+
+ * @apiSuccessExample {json} Success-Response:
+ {
+   "code": 0,
+   "msg": "添加成功",
+   "data": {}
+ }
+ */
 router.get('/del',function(req,res,next){
     var id=req.query.id;
     customerservice.delUserById({id:id}).then(result=>{
@@ -296,6 +315,28 @@ router.get('/getcookie', function(req, res, next) {
     }
 });
 
+
+router.get('/promiseall', function(req, res, next) {
+
+    var userid=req.query.userid;
+    Promise.all([
+        customerservice.getUserById({userid:1}),
+        customerservice.getUserById({userid:2})
+
+    ]).then(data=>{
+        console.log(this.process);
+        //console.log(data);
+    }).catch(err=>{
+
+    });
+
+
+    res.json({
+        code: 1,
+        msg: 'err',
+        data: JSON.stringify(err)
+    })
+});
 module.exports = router;
 
 

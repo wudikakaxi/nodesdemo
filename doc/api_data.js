@@ -91,6 +91,44 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/users/del",
+    "title": "del",
+    "name": "del",
+    "group": "users",
+    "description": "<p>删除用户信息</p>",
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "int",
+            "optional": false,
+            "field": "id",
+            "description": "<p>用户id</p>"
+          }
+        ]
+      }
+    },
+    "version": "0.0.2",
+    "sampleRequest": [
+      {
+        "url": "http://localhost:3000/users/del/"
+      }
+    ],
+    "success": {
+      "examples": [
+        {
+          "title": "Success-Response:",
+          "content": "{\n  \"code\": 0,\n  \"msg\": \"添加成功\",\n  \"data\": {}\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "filename": "routes/users.js",
+    "groupTitle": "users"
+  },
+  {
+    "type": "get",
     "url": "/users/edit",
     "title": "edit",
     "name": "edit",
