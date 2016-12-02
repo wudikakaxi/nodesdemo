@@ -6,7 +6,7 @@ var app = express();
 
 var configDev={
     mssqlRead: {
-        server: '127.0.0.1',
+        server: '172.18.12.36',
         user: 'sa',
         password: '123123',
         database: 'test',
@@ -21,7 +21,7 @@ var configDev={
         }
     },
     mssqlWrite: {
-        server: '127.0.0.1',
+        server: '172.18.12.36',
         user: 'sa',
         password: '123123',
         database: 'test',
@@ -51,14 +51,14 @@ var configDev={
             category: "console"
         }, {
             "type": "file",
-            "filename": "./logs/error.log",
+            "filename": "../logs/error.log",
             "maxLogSize": 102400,
             "backups": 3,
             "category": "file"
         },
             {
                 "type": "file",
-                "filename": "./logs/info.log",
+                "filename": "../logs/info.log",
                 "maxLogSize": 102400,
                 "backups": 3,
                 "category": "fileinfo"
