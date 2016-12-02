@@ -92,3 +92,5 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+
+//npm install --registry=https://registry.npm.taobao.org
