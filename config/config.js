@@ -52,7 +52,7 @@ var configDev={
         }, {
             "type": "file",
             "filename": "../logs/error.log",
-            "maxLogSize": 102400,
+            "maxLogSize": 10240.0,
             "backups": 3,
             "category": "file"
         },
@@ -63,6 +63,10 @@ var configDev={
                 "backups": 3,
                 "category": "fileinfo"
             }]
+    },
+    amqp:{
+        url:'amqp://etao:etao123@10.8.8.52:5672/test'
+
     }
 };
 var config=configDev;

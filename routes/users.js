@@ -20,7 +20,7 @@ var sd = require('silly-datetime');
  * @apiSuccessExample {json} Success-Response:
  {
    "code": 0,
-   "msg": "获取成功",
+   "msg": "获取成功"
    "data": {}
  }
  */

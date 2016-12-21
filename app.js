@@ -10,6 +10,8 @@ var redisStore = require('connect-redis')(session);
 var config=require('./config/config');
 var jwtmiddleware = require('./middlewares/jwtmiddleware');
 
+var mq=require('./util/rabbitmq');
+
 /*---------路由引用都放到这里--------*/
 var jwtrouter=require('./routes/jwt');
 var demorouter = require('./routes/demo');
@@ -18,6 +20,7 @@ var filerouter=require('./routes/file');
 var redisrouter=require('./routes/redis');
 var qrcoderouter=require('./routes/qrcode');
 var socketrouter=require('./routes/socket');
+var productrmq=require('./routes/productrmq');
 /*---------路由引用都放到这里--------*/
 
 var jwt=require('express-jwt')({
@@ -66,6 +69,7 @@ app.use('/redis',redisrouter);
 app.use('/qrcode',qrcoderouter);
 app.use('/socket',socketrouter);
 app.use('/doc', express.static(path.join(__dirname, 'doc')));
+app.use('/productrmq',productrmq);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -88,7 +92,7 @@ app.use(function(err, req, res, next) {
 
 //console.log(app.get('env'));
 
-
+mq.init();
 
 
 module.exports = app;

@@ -1,0 +1,51 @@
+[2016-12-20 17:58:58.718] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-20 18:03:04.115] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-20 18:06:23.461] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-20 18:11:32.700] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-20 18:12:26.028] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-20 18:13:06.671] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-20 18:20:40.754] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 09:46:15.065] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 09:57:08.328] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 09:57:09.202] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 10:37:46.199] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 10:38:21.496] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 10:38:24.567] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 10:55:21.657] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 10:55:32.035] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 10:57:02.756] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }
+[2016-12-21 11:12:25.752] [ERROR] file - { Error: read ECONNRESET
+    at exports._errnoException (util.js:1022:11)
+    at TCP.onread (net.js:572:26) code: 'ECONNRESET', errno: 'ECONNRESET', syscall: 'read' }

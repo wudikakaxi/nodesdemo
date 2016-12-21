@@ -6,8 +6,10 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
-    "amqplib": "^0.5.0",
+    "amqplib": "^0.5.1",
+    "bluebird": "^3.4.6",
     "body-parser": "~1.15.2",
+    "connect-redis": "^3.1.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "del": "^2.2.2",
@@ -36,8 +38,6 @@
     "serve-favicon": "~2.3.0",
     "silly-datetime": "^0.1.2",
     "socket.io": "^1.5.1",
-    "supertest": "^2.0.1",
-    "redis": "^2.6.3",
-    "connect-redis": "^3.1.0"
+    "supertest": "^2.0.1"
   }
 }

@@ -29,7 +29,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"code\": 0,\n  \"msg\": \"获取成功\",\n  \"data\": {}\n}",
+          "content": "{\n  \"code\": 0,\n  \"msg\": \"获取成功\"\n  \"data\": {}\n}",
           "type": "json"
         }
       ]
